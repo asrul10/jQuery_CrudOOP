@@ -2,7 +2,7 @@
 
 $id=$_GET['id'];
 // Pemanggilan Class CRUD (koneksi sudah termasuk didalamnya)
-include "../model/CRUD.php";
+include "../model/crud.php";
 
 // menginisiasi Class CRUD
 $CRUD = new CRUD();

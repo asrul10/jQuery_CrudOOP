@@ -6,7 +6,7 @@ $jumlah=$_GET['jumlah'];
 $hbeli=$_GET['hbeli'];
 $hjual=$_GET['hjual'];
 // Pemanggilan Class CRUD (koneksi sudah termasuk didalamnya)
-include "../model/CRUD.php";
+include "../model/crud.php";
 
 // menginisiasi Class CRUD
 $CRUD = new CRUD();
