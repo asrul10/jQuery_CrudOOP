@@ -1,21 +1,13 @@
-$(document).ready(function(){
-        
-        read();
-        
-        $("#enterrr").keypress(function(event){
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
-            	   $("#add").focus();
-            	}
-	       });
-    });
+$(document).ready(function(){     
+    read();
+});
 
 function read(){
     $.get('controler/read.php', function(returnData) {
-                        $('#results').html(returnData);
-                        $('#save').attr('disabled','disabled');
-                        $('#add').removeAttr('disabled');
-                });
+            $('#results').html(returnData);
+            $('#save').attr('disabled','disabled');
+            $('#add').removeAttr('disabled');
+    });
 }
 
 function edit(idne,namane,jenise,jumlae,hrb,hrj){
@@ -49,12 +41,11 @@ function cleardata(){
 }
 
 function hapus( id ){
-	var answer = confirm('Are you sure?');
-	if ( answer ){ 
-        $.get('controler/delete.php?id='+id, function(returnData) {
+    $("#ya").click(function() {
+        $.get('controler/delete.php?id='+id, function() {
             read();
         });
-	}
+    });
 }
 
 function tambah(){

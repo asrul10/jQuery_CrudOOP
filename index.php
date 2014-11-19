@@ -10,6 +10,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/a-design.css">
         <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="css/awesome.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,37 +43,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a class="btn btn-primary" data-toggle="modal" href='#modal-id'><i class="fa fa-plus"></i> Tambah</a>
-                    <div class="table-responsive" style="margin-top:10px;">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <table class="table table-condensed" >
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Id</th>
-                                            <th>Nama Brg</th>
-                                            <th>Jenis</th>
-                                            <th>Jumlah</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                                <div class="div-table-content">
-                                    <table class="table table-condensed table-hover ">
-                                        <tbody id="results">
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
+                    <div class="table-responsive" style="margin-top:10px;" id="results">
+                        <!--Table jQuery tampil disini-->
+                    </div>                        
                 </div>
             </div>
         </div>
     </section>
 
+    <!--form modal disini-->
     <div class="modal fade" id="modal-id">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -95,16 +75,16 @@
                         </div>
                         <div class="form-group">
                             <label>Jumlah</label>
-                            <input class="form-control" name="fmjumlah" placeholder="jumlah" id="fmjumlah" type="text" />
+                            <input class="form-control" name="fmjumlah" placeholder="jumlah" id="fmjumlah" type="number" />
                         </div>
                         <div class="form-group">
                             <label>Harga Beli</label>
-                            <input class="form-control" name="fmhbeli" placeholder="harga beli" id="fmhbeli" type="text" />
+                            <input class="form-control" name="fmhbeli" placeholder="harga beli" id="fmhbeli" type="number" />
                         </div>
                         <div class="form-group">
                             <label>Harga Jual</label>
-                            <input class="form-control" name="fmhjual" placeholder="harga jual" id="fmhjual" type="text" />
-                        </div>                     
+                            <input class="form-control" name="fmhjual" placeholder="harga jual" id="fmhjual" type="number" />
+                        </div>      
                 </div>
                 <div class="modal-footer">
                         <button class="btn btn-default" id="clear" onClick="cleardata();" data-dismiss="modal">Close</button>                    
@@ -115,6 +95,21 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!--Alert Modal-->
+    <div id="alert" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="abc">Are you sure?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ya" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                <button type="button" id="tidak" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
         <hr>
@@ -132,9 +127,8 @@
     <!-- jQuery -->
     <script src="js/jquery-1.11.0.js"></script>
     <!-- Awal -->
-    <script type="text/javascript" src="js/jquery-crud.js"></script>
+    <script src="js/jquery-crud.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
     </body>
 </html>

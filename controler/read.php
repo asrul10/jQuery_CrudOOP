@@ -14,6 +14,22 @@ $CRUD = new CRUD();
 $rows = $CRUD->get_data('barangnya','id','ASC');
 $i = 1;
 // Menampilkan data user yang berhasil di ambil
+?>
+<table class="table table-bordered" id="dataTables-example">
+<thead>
+    <tr>
+        <th>No.</th>
+        <th>Id</th>
+        <th>Nama Brg</th>
+        <th>Jenis</th>
+        <th>Jumlah</th>
+        <th>Harga Beli</th>
+        <th>Harga Jual</th>
+        <th>Aksi</th>
+    </tr>
+</thead>
+<tbody>
+<?php
 foreach ($rows as $value) {
     echo "<tr>";
     echo "<td>".$i."</td>";
@@ -28,7 +44,7 @@ foreach ($rows as $value) {
 		<a data-toggle="modal" href='#modal-id' onclick="edit('<?=$value['id']?>','<?=$value['nama'] ?>','<?=$value['jenis'] ?>','<?=$value['jumlah'] ?>','<?=$value['hrg_beli'] ?>','<?=$value['hrg_jual'] ?>');">
 			<i class="fa fa-pencil"></i> Edit
 		</a> |
-        <a href="" onclick="hapus('<?=$value['id']?>');" >
+        <a data-toggle="modal" href="#alert" onclick="hapus('<?=$value['id']?>');" >
         	<i class="fa fa-trash"></i> Delete
         </a>
 	</td>
@@ -37,3 +53,12 @@ foreach ($rows as $value) {
 	$i = $i+1;
 }
 ?>
+     </tbody>
+</table>
+<script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script>
+$(document).ready(function() {
+    $('#dataTables-example').dataTable();
+});
+</script>
