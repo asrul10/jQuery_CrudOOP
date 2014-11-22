@@ -34,7 +34,7 @@ function bersih(){
 
 function cleardata(){
     bersih();
-    $('#fmid').removeAttr('readonly');;
+    $('#fmid').removeAttr('readonly');
     $('#add').removeAttr('disabled');
     $('#save').attr('disabled','disabled');
     read();

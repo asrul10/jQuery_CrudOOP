@@ -25,7 +25,10 @@ $i = 1;
         <th>Jumlah</th>
         <th>Harga Beli</th>
         <th>Harga Jual</th>
-        <th>Aksi</th>
+        <th id="box-btn">
+            <a class="btn btn-primary btn-custom" data-toggle="modal" href='#modal-id'>
+                +
+        </th>
     </tr>
 </thead>
 <tbody>
@@ -43,7 +46,7 @@ foreach ($rows as $value) {
 	<td align="right">
 		<a data-toggle="modal" href='#modal-id' onclick="edit('<?=$value['id']?>','<?=$value['nama'] ?>','<?=$value['jenis'] ?>','<?=$value['jumlah'] ?>','<?=$value['hrg_beli'] ?>','<?=$value['hrg_jual'] ?>');">
 			<i class="fa fa-pencil"></i> Edit
-		</a> |
+		</a> &nbsp;&nbsp;
         <a data-toggle="modal" href="#alert" onclick="hapus('<?=$value['id']?>');" >
         	<i class="fa fa-trash"></i> Delete
         </a>
@@ -61,4 +64,5 @@ foreach ($rows as $value) {
 $(document).ready(function() {
     $('#dataTables-example').dataTable();
 });
+
 </script>

@@ -8,10 +8,9 @@
 
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/a-design.css">
+        <link rel="stylesheet" type="text/css" href="css/a-design.css">        
         <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-        <link href="css/awesome.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,18 +21,20 @@
     </head>
     <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1><i class="fa fa-table"></i> jQuery CrudOOP</h1>
+        <div class="garis">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1><i class="fa fa-table"></i> jQuery CRUD OOP</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                    <p class="text-center">Simple, Clean, Responsive, Fast, Bootstrap</p>    
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <p class="text-center">Simple, Clean, Responsive, Fast, Bootstrap</p>    
+                    </div>
+                    <div class="col-lg-3"></div>
                 </div>
-                <div class="col-lg-3"></div>
             </div>
         </div>
     </header>
@@ -42,7 +43,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <a class="btn btn-primary" data-toggle="modal" href='#modal-id'><i class="fa fa-plus"></i> Tambah</a>
                     <div class="table-responsive" style="margin-top:10px;" id="results">
                         <!--Table jQuery tampil disini-->
                     </div>                        
@@ -112,14 +112,13 @@
     </div>
 
     <footer>
-        <hr>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                    <p>Built and Design by Asrul Hanafi</p>                              
                 </div>   
                 <div class="col-md-6" align="right">
-                   <p>Copyright &#174; <a href="">A-Design</a></p>                              
+                   <p>Copyright &#174; A-Design</p>                              
                 </div>                           
             </div>            
         </div>
